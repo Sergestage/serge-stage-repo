@@ -6,7 +6,7 @@ function isprime(num) {
         return false;
     }
 
-    while (a <= num / 2) {
+    while (a < num / 2) {
         if (num % a == 0) {
             check = false;
             break;
