@@ -1,0 +1,44 @@
+function isprime(num) {
+    let a = 2;
+    let check = true;
+
+    if (num < 2) {
+        return false;
+    }
+
+    while (a <= num / 2) {
+        if (num % a == 0) {
+            check = false;
+            break;
+        }
+        a++;
+    }
+
+    return check;
+}
+
+function nthPrime(n) {
+    let howMany = 0;
+    let current = 1;
+
+    while (howMany < n) {
+        current++;
+        if (isprime(current)) {
+            howMany++;
+        }
+    }
+
+    return current;
+}
+
+let test = 10;
+
+let isIt = isprime(test);
+if (isIt === true) {
+    console.log(test + " it's a prime !");
+} else {
+    console.log(test + " nope, not prime...");
+}
+
+let found = nthPrime(test);
+console.log("The number " + test + " in the prime list is: " + found);
