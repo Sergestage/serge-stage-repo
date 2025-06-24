@@ -16,7 +16,7 @@ function Isthecinefull() {
   return true;
 }
 
-// Initialisation de la salle de cinéma
+
 let cine = [];
 let i = 0;
 while (i < maxRows) {
@@ -30,7 +30,7 @@ while (i < maxRows) {
   i++;
 }
 
-// Boucle de réservation
+
 while (true) {
   if (Isthecinefull()) {
     console.log("Mb men there are no more place for that one filme");
