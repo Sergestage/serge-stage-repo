@@ -1,0 +1,51 @@
+let maxRows = 9;
+let maxSeats = 16;
+
+function Isthecinefull() {
+  let i = 0;
+  while (i < cine.length) {
+    let j = 0;
+    while (j < cine[i].length) {
+      if (cine[i][j] === "_") {
+        return false;
+      }
+      j++;
+    }
+    i++;
+  }
+  return true;
+}
+
+// Initialisation de la salle de cinéma
+let cine = [];
+let i = 0;
+while (i < maxRows) {
+  let row = [];
+  let j = 0;
+  while (j < maxSeats) {
+    row.push("_");
+    j++;
+  }
+  cine.push(row);
+  i++;
+}
+
+// Boucle de réservation
+while (true) {
+  if (Isthecinefull()) {
+    console.log("Mb men there are no more place for that one filme");
+    break;
+  }
+
+  let row = +prompt("row 0-" + (maxRows - 1) + ": ");
+  let position = +prompt("position 0-" + (maxSeats - 1) + ": ");
+
+  console.log("you piked " + row + " " + position + " right?");
+
+  if (cine[row][position] !== "_") {
+    console.log("Lol too late");
+  } else {
+    cine[row][position] = "X";
+    console.log("Have a good time :0");
+  }
+}
