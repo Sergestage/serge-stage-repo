@@ -1,0 +1,10 @@
+let x = 0;
+let y = 1;
+let max = +prompt("How many results do you want?");
+
+while (max > 0) {
+  console.log(x);
+  y = x + y;
+  x = y - x;
+  max--;
+}
