@@ -1,21 +1,5 @@
-let maxRows = 9;
-let maxSeats = 16;
-
-function Isthecinefull() {
-  let i = 0;
-  while (i < cine.length) {
-    let j = 0;
-    while (j < cine[i].length) {
-      if (cine[i][j] === "_") {
-        return false;
-      }
-      j++;
-    }
-    i++;
-  }
-  return true;
-}
-
+let maxRows = 5;
+let maxSeats = 5;
 
 let cine = [];
 let i = 0;
@@ -30,22 +14,22 @@ while (i < maxRows) {
   i++;
 }
 
+let ticketsSold = 0;
+let totalSeats = maxRows * maxSeats;
 
-while (true) {
-  if (Isthecinefull()) {
-    console.log("Mb men there are no more place for that one filme");
-    break;
-  }
-
+while (ticketsSold < totalSeats) {
   let row = +prompt("row 0-" + (maxRows - 1) + ": ");
   let position = +prompt("position 0-" + (maxSeats - 1) + ": ");
 
-  console.log("you piked " + row + " " + position + " right?");
+  console.log("You picked row " + row + " position " + position);
 
   if (cine[row][position] !== "_") {
-    console.log("Lol too late");
+    console.log("Lol too late, seat already booked!");
   } else {
     cine[row][position] = "X";
+    ticketsSold++;
     console.log("Have a good time :0");
   }
 }
+
+console.log("Mb men there are no more place for that one filme");
