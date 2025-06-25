@@ -1,0 +1,22 @@
+let a = [2, 5, 7, 9];
+let x = 11;
+
+function twoSum(z, x) {
+  let i = 0;
+
+while (i < z.length) {
+  let j = i + 1;
+
+  while (j < z.length) {
+    if (z[i] + z[j] === x) {
+    return [i, j];
+    }
+    j++;
+}
+    i++;
+  }
+
+  return ("Sry man I didn t find anything."); 
+}
+
+console.log(twoSum(a, x));
