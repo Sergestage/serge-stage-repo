@@ -1,0 +1,29 @@
+let row = +prompt("How many rows of Pascal's triangle do you want?: ");
+
+function creatPascalTriangl(row) {
+  let triangle = [[1],[1,1]];
+  let i = 2;
+
+  while (i < row) {
+    triangle[i] = [];
+    let z = 0;
+    let y = 0;
+
+    while(z < triangle[i - 1].length - 1){
+        triangle[i][z] = triangle[i - 1][z] + triangle[i - 1][z + 1];
+       
+        z++;
+        
+    }
+       
+    triangle[i].push(1);
+    triangle[i].unshift(1); 
+    
+
+    i++;
+  }
+
+  console.log(triangle);
+}
+
+creatPascalTriangl(row);
