@@ -2,11 +2,9 @@ let maxRows = 5;
 let maxSeats = 5;
 
 let cine = [];
-let i = 0;
-while (i < maxRows) {
+for (let i = 0; i < maxRows;) {
   let row = [];
-  let j = 0;
-  while (j < maxSeats) {
+  for (let j = 0; j < maxSeats;) {
     row.push("_");
     j++;
   }
@@ -17,7 +15,7 @@ while (i < maxRows) {
 let ticketsSold = 0;
 let totalSeats = maxRows * maxSeats;
 
-while (ticketsSold < totalSeats) {
+for (; ticketsSold < totalSeats;) {
   let row = +prompt("row 0-" + (maxRows - 1) + ": ");
   let position = +prompt("position 0-" + (maxSeats - 1) + ": ");
 
