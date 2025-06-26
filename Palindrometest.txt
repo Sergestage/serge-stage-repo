@@ -1,15 +1,19 @@
 let mot = prompt("What is your word?: ");
-let motInverse = ""; 
+let estPalindrome = true;
+let longueur = mot.length;
 
-let i = mot.length - 1;
-    while (i >= 0) {
-        motInverse = motInverse + mot[i];
-        i--;
+for (let i = 0; i < longueur / 2; i++) {
+  let j = longueur - 1 - i;
+  let start = mot[i];
+  let end = mot[j];
+
+  if (start !== end) {
+    estPalindrome = false;
+  }
 }
 
-if (mot === motInverse) {
-    console.log("It's a palindrome");
-    
+if (estPalindrome) {
+  console.log("It's a palindrome");
 } else {
-     console.log("It's not a palindrome");
+  console.log("It's not a palindrome");
 }
