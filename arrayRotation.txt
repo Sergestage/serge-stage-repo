@@ -1,14 +1,17 @@
-let liste = [1, 2, 3, 4, 5,];
-let sift = +prompt("How many shifts do you want to apply to the list?: ")
-let i = 0;
- function test (){
-    
-    while (i < sift ){
-        let y = liste[liste.length - 1];
-        liste.pop();
-        liste.unshift(y);
-        i++
-   }
- return liste;
-     }
-console.log( test())
+let liste = [1, 2, 3, 4, 5];
+let shift = +prompt("How many shifts do you want to apply to the list?: ");
+
+shift = shift % liste.length;
+
+function test() {
+  let i = 0;
+  while (i < shift) {
+    let y = liste[liste.length - 1];
+    liste.pop();
+    liste.unshift(y);
+    i++;
+  }
+  return liste;
+}
+
+console.log(test());
